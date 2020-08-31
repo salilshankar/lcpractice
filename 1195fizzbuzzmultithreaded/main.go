@@ -40,7 +40,7 @@ func fizzBuzz(amount int) []string {
 
 	//wg.Wait()
 
-	close(fbch)
+	//close(fbch)
 
 	// ctr := 1
 
