@@ -42,19 +42,10 @@ func validPalindrome(s string) bool {
 		}
 	}
 
-	// fmt.Println(string(str1), "1st attempt")
-	isPalindrome, _ = checkPalindrome(string(str1))
-	if isPalindrome {
-		return true
-	}
+	p1, _ := checkPalindrome(string(str1))
+	p2, _ := checkPalindrome(string(str2))
 
-	// fmt.Println(string(str2), "2nd attempt")
-	isPalindrome, _ = checkPalindrome(string(str2))
-	if isPalindrome {
-		return true
-	}
-
-	return false
+	return p1 || p2
 }
 
 func checkPalindrome(s string) (bool, int) {
