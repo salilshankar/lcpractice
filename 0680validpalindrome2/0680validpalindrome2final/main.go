@@ -26,24 +26,11 @@ func validPalindrome(s string) bool {
 		return true
 	}
 
-	str1 := make([]byte, lenStr-1)
-	str2 := make([]byte, lenStr-1)
-	j, k := 0, 0
-
-	for i := range s {
-		if i != failIndex {
-			str1[k] = s[i]
-			k++
-		}
-
-		if i != len(s)-1-failIndex {
-			str2[j] = s[i]
-			j++
-		}
-	}
-
-	p1, _ := checkPalindrome(string(str1))
-	p2, _ := checkPalindrome(string(str2))
+	str1 := string(s[:failIndex] + s[failIndex+1:])
+	str2 := string(s[:lenStr-1-failIndex] + s[lenStr-failIndex:])
+	
+	p1, _ := checkPalindrome(str1)
+	p2, _ := checkPalindrome(str2)
 
 	return p1 || p2
 }
