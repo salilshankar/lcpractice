@@ -54,10 +54,6 @@ func addCarry(a []byte, carry byte) []byte {
 		return a
 	}
 
-	if a[0] == a[1] && a[0] == 49 {
-		return []byte{49, 49}
-	}
-
 	if a[0] == a[1] && a[0] == 48 {
 		return []byte{48, 49}
 	}
